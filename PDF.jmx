@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="PDF" enabled="true">
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Http URL/API Test" enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration">0</stringProp>
+        <stringProp name="ThreadGroup.delay">0</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Cookie Manager" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="_create" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;authToken&quot;: null&#xd;
+  },&#xd;
+  &quot;Payments&quot;: [&#xd;
+    {&#xd;
+      &quot;id&quot;: &quot;82c64e4b-0aeb-44d6-a885-77491ba3fcc4&quot;,&#xd;
+      &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+      &quot;totalDue&quot;: 574033,&#xd;
+      &quot;totalAmountPaid&quot;: 100,&#xd;
+      &quot;transactionNumber&quot;: &quot;PB_PG_2021_01_19_004381_81&quot;,&#xd;
+      &quot;transactionDate&quot;: 1611058754839,&#xd;
+      &quot;paymentMode&quot;: &quot;ONLINE&quot;,&#xd;
+      &quot;instrumentDate&quot;: 1611058754839,&#xd;
+      &quot;instrumentNumber&quot;: &quot;PB_PG_2021_01_19_004381_81&quot;,&#xd;
+      &quot;instrumentStatus&quot;: &quot;REMITTED&quot;,&#xd;
+      &quot;ifscCode&quot;: null,&#xd;
+      &quot;auditDetails&quot;: {&#xd;
+        &quot;createdBy&quot;: &quot;29752&quot;,&#xd;
+        &quot;createdTime&quot;: 1611058754822,&#xd;
+        &quot;lastModifiedBy&quot;: &quot;29752&quot;,&#xd;
+        &quot;lastModifiedTime&quot;: 1611058754822&#xd;
+      },&#xd;
+      &quot;additionalDetails&quot;: {&#xd;
+        &quot;isWhatsapp&quot;: true,&#xd;
+        &quot;taxAndPayments&quot;: [&#xd;
+          {&#xd;
+            &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+            &quot;taxAmount&quot;: null,&#xd;
+            &quot;amountPaid&quot;: 100&#xd;
+          }&#xd;
+        ]&#xd;
+      },&#xd;
+      &quot;paymentDetails&quot;: [&#xd;
+        {&#xd;
+          &quot;paymentId&quot;: null,&#xd;
+          &quot;id&quot;: &quot;c5431f0f-bc87-4fe5-a5d0-0c8bca8844b5&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+          &quot;totalDue&quot;: 574033,&#xd;
+          &quot;totalAmountPaid&quot;: 100,&#xd;
+          &quot;receiptNumber&quot;: &quot;01/2020-21/005633&quot;,&#xd;
+          &quot;manualReceiptNumber&quot;: null,&#xd;
+          &quot;manualReceiptDate&quot;: 0,&#xd;
+          &quot;receiptDate&quot;: 1611058754822,&#xd;
+          &quot;receiptType&quot;: &quot;BILLBASED&quot;,&#xd;
+          &quot;businessService&quot;: &quot;WS&quot;,&#xd;
+          &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+          &quot;bill&quot;: {&#xd;
+            &quot;id&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+            &quot;mobileNumber&quot;: null,&#xd;
+            &quot;paidBy&quot;: null,&#xd;
+            &quot;payerName&quot;: null,&#xd;
+            &quot;payerAddress&quot;: null,&#xd;
+            &quot;payerEmail&quot;: null,&#xd;
+            &quot;payerId&quot;: null,&#xd;
+            &quot;status&quot;: &quot;ACTIVE&quot;,&#xd;
+            &quot;reasonForCancellation&quot;: null,&#xd;
+            &quot;isCancelled&quot;: null,&#xd;
+            &quot;additionalDetails&quot;: null,&#xd;
+            &quot;billDetails&quot;: [&#xd;
+              {&#xd;
+                &quot;billDescription&quot;: null,&#xd;
+                &quot;displayMessage&quot;: null,&#xd;
+                &quot;callBackForApportioning&quot;: null,&#xd;
+                &quot;cancellationRemarks&quot;: null,&#xd;
+                &quot;id&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                &quot;demandId&quot;: &quot;cf18adb9-249d-4f82-a002-91f3d82d2a9e&quot;,&#xd;
+                &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+                &quot;amount&quot;: 295692,&#xd;
+                &quot;amountPaid&quot;: 0,&#xd;
+                &quot;fromPeriod&quot;: 1593887399000,&#xd;
+                &quot;toPeriod&quot;: 1596085238078,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;channel&quot;: null,&#xd;
+                &quot;voucherHeader&quot;: null,&#xd;
+                &quot;boundary&quot;: null,&#xd;
+                &quot;manualReceiptNumber&quot;: null,&#xd;
+                &quot;manualReceiptDate&quot;: null,&#xd;
+                &quot;billAccountDetails&quot;: [&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;c2d7c704-1da7-49c2-8cd1-4c95fb45dd76&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;7777a0eb-fd8f-413a-8824-0ff36cc70f0e&quot;,&#xd;
+                    &quot;order&quot;: 0,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_ADVANCE_CARRYFORWARD&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;7cd65738-0d2c-4cd4-8351-ee3974c3635e&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;35b24658-7bdc-41bb-a82e-ac662fc93a24&quot;,&#xd;
+                    &quot;order&quot;: 0,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_CHARGE&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;e7218359-96c4-405d-8a8d-006b60ed2b01&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;3833c6bc-0995-4f82-97d4-c03a60e08b68&quot;,&#xd;
+                    &quot;order&quot;: 3,&#xd;
+                    &quot;amount&quot;: 197127.76,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_PENALTY&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;49995e5f-f507-4487-b830-1e4a4f2d6845&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;4221896c-40f7-4bfa-8400-bd1616e1705f&quot;,&#xd;
+                    &quot;order&quot;: 4,&#xd;
+                    &quot;amount&quot;: 0.36,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_Round_Off&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;9344037a-3ec2-4694-8362-9a5150de38e5&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;cb9d892f-0e32-4139-a1c0-196034a85359&quot;,&#xd;
+                    &quot;order&quot;: 1,&#xd;
+                    &quot;amount&quot;: 98563.88,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_INTEREST&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;17face53-45ef-4812-a7a4-edf8785e40ee&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;ba2402f3-47cf-4100-8fc3-0259462102ec&quot;,&#xd;
+                    &quot;order&quot;: 2,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_WATER_CESS&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  }&#xd;
+                ],&#xd;
+                &quot;collectionType&quot;: null,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;expiryDate&quot;: 1611100799593&#xd;
+              },&#xd;
+              {&#xd;
+                &quot;billDescription&quot;: null,&#xd;
+                &quot;displayMessage&quot;: null,&#xd;
+                &quot;callBackForApportioning&quot;: null,&#xd;
+                &quot;cancellationRemarks&quot;: null,&#xd;
+                &quot;id&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                &quot;demandId&quot;: &quot;94af114a-ee5d-4740-9e02-caeb998ead1f&quot;,&#xd;
+                &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+                &quot;amount&quot;: 278341,&#xd;
+                &quot;amountPaid&quot;: 100,&#xd;
+                &quot;fromPeriod&quot;: 1590796800000,&#xd;
+                &quot;toPeriod&quot;: 1591747200000,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;channel&quot;: null,&#xd;
+                &quot;voucherHeader&quot;: null,&#xd;
+                &quot;boundary&quot;: null,&#xd;
+                &quot;manualReceiptNumber&quot;: null,&#xd;
+                &quot;manualReceiptDate&quot;: null,&#xd;
+                &quot;billAccountDetails&quot;: [&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;7eb5cdd6-62fb-4cac-9f08-624926aa59ec&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;34d9fa56-6056-4433-9b9f-d1c8868682c4&quot;,&#xd;
+                    &quot;order&quot;: 0,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_CHARGE&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;3d4e0a78-95c6-476c-87b0-be19d1107104&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;019f9119-99cb-47ce-9411-ab799fd9c398&quot;,&#xd;
+                    &quot;order&quot;: 3,&#xd;
+                    &quot;amount&quot;: 185761.02,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_PENALTY&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;c9e9edde-6a5e-4c8a-b4ec-2f7ac6beb722&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;0d9ac9bd-a931-49e1-86d0-26655641f0e8&quot;,&#xd;
+                    &quot;order&quot;: 4,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_Round_Off&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;a2d36565-0092-40ef-8c10-5fcfd0153a21&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;e160624d-7b67-4caa-b811-c935a0cd00dd&quot;,&#xd;
+                    &quot;order&quot;: 1,&#xd;
+                    &quot;amount&quot;: 92579.98,&#xd;
+                    &quot;adjustedAmount&quot;: 100,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_INTEREST&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;388d3b68-673e-4e07-8735-618020cd460c&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;8b00a7f3-f94a-4f50-b42b-ad025b9b8ebb&quot;,&#xd;
+                    &quot;order&quot;: 2,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_WATER_CESS&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  }&#xd;
+                ],&#xd;
+                &quot;collectionType&quot;: null,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;expiryDate&quot;: 1611100799592&#xd;
+              }&#xd;
+            ],&#xd;
+            &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+            &quot;auditDetails&quot;: {&#xd;
+              &quot;createdBy&quot;: &quot;1bc2f02b-eb30-4777-a8b1-6e831e867c4f&quot;,&#xd;
+              &quot;createdTime&quot;: 1611058697593,&#xd;
+              &quot;lastModifiedBy&quot;: &quot;1bc2f02b-eb30-4777-a8b1-6e831e867c4f&quot;,&#xd;
+              &quot;lastModifiedTime&quot;: 1611058697593&#xd;
+            },&#xd;
+            &quot;collectionModesNotAllowed&quot;: [&#xd;
+              &quot;DD&quot;&#xd;
+            ],&#xd;
+            &quot;partPaymentAllowed&quot;: true,&#xd;
+            &quot;isAdvanceAllowed&quot;: true,&#xd;
+            &quot;minimumAmountToBePaid&quot;: null,&#xd;
+            &quot;businessService&quot;: &quot;WS&quot;,&#xd;
+            &quot;totalAmount&quot;: 574033,&#xd;
+            &quot;consumerCode&quot;: &quot;WS/107/2020-21/000080&quot;,&#xd;
+            &quot;billNumber&quot;: &quot;BILL-013011&quot;,&#xd;
+            &quot;billDate&quot;: 1611058697593,&#xd;
+            &quot;amountPaid&quot;: null&#xd;
+          },&#xd;
+          &quot;additionalDetails&quot;: null,&#xd;
+          &quot;auditDetails&quot;: {&#xd;
+            &quot;createdBy&quot;: &quot;29752&quot;,&#xd;
+            &quot;createdTime&quot;: 1611058754822,&#xd;
+            &quot;lastModifiedBy&quot;: &quot;29752&quot;,&#xd;
+            &quot;lastModifiedTime&quot;: 1611058754822&#xd;
+          }&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;paidBy&quot;: &quot;Aniket&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9999999999&quot;,&#xd;
+      &quot;payerName&quot;: null,&#xd;
+      &quot;payerAddress&quot;: null,&#xd;
+      &quot;payerEmail&quot;: null,&#xd;
+      &quot;payerId&quot;: &quot;1bc2f02b-eb30-4777-a8b1-6e831e867c4f&quot;,&#xd;
+      &quot;paymentStatus&quot;: &quot;DEPOSITED&quot;,&#xd;
+      &quot;fileStoreId&quot;: null&#xd;
+    }&#xd;
+  ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8189</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/pdf-service/v1/_create?key=consolidatedreceipt&amp;tenantId=pb</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="_search" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;apiId&quot;: &quot;Mihy&quot;,&#xd;
+    &quot;ver&quot;: &quot;.01&quot;,&#xd;
+    &quot;action&quot;: &quot;_get&quot;,&#xd;
+    &quot;did&quot;: &quot;1&quot;,&#xd;
+    &quot;key&quot;: &quot;&quot;,&#xd;
+    &quot;msgId&quot;: &quot;20170310130900|en_IN&quot;,&#xd;
+    &quot;requesterId&quot;: &quot;&quot;,&#xd;
+    &quot;authToken&quot;: &quot;${devAuth}&quot;&#xd;
+  }&#xd;
+ }</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8189</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/pdf-service/v1/_search?jobid=tradelicense-receipt1609833497413</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="_createnosave" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+  &quot;RequestInfo&quot;: {&#xd;
+    &quot;authToken&quot;: &quot;${qaAuth}&quot;&#xd;
+  },&#xd;
+  &quot;Payments&quot;: [&#xd;
+    {&#xd;
+      &quot;id&quot;: &quot;82c64e4b-0aeb-44d6-a885-77491ba3fcc4&quot;,&#xd;
+      &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+      &quot;totalDue&quot;: 574033,&#xd;
+      &quot;totalAmountPaid&quot;: 100,&#xd;
+      &quot;transactionNumber&quot;: &quot;PB_PG_2021_01_19_004381_81&quot;,&#xd;
+      &quot;transactionDate&quot;: 1611058754839,&#xd;
+      &quot;paymentMode&quot;: &quot;ONLINE&quot;,&#xd;
+      &quot;instrumentDate&quot;: 1611058754839,&#xd;
+      &quot;instrumentNumber&quot;: &quot;PB_PG_2021_01_19_004381_81&quot;,&#xd;
+      &quot;instrumentStatus&quot;: &quot;REMITTED&quot;,&#xd;
+      &quot;ifscCode&quot;: null,&#xd;
+      &quot;auditDetails&quot;: {&#xd;
+        &quot;createdBy&quot;: &quot;29752&quot;,&#xd;
+        &quot;createdTime&quot;: 1611058754822,&#xd;
+        &quot;lastModifiedBy&quot;: &quot;29752&quot;,&#xd;
+        &quot;lastModifiedTime&quot;: 1611058754822&#xd;
+      },&#xd;
+      &quot;additionalDetails&quot;: {&#xd;
+        &quot;isWhatsapp&quot;: true,&#xd;
+        &quot;taxAndPayments&quot;: [&#xd;
+          {&#xd;
+            &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+            &quot;taxAmount&quot;: null,&#xd;
+            &quot;amountPaid&quot;: 100&#xd;
+          }&#xd;
+        ]&#xd;
+      },&#xd;
+      &quot;paymentDetails&quot;: [&#xd;
+        {&#xd;
+          &quot;paymentId&quot;: null,&#xd;
+          &quot;id&quot;: &quot;c5431f0f-bc87-4fe5-a5d0-0c8bca8844b5&quot;,&#xd;
+          &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+          &quot;totalDue&quot;: 574033,&#xd;
+          &quot;totalAmountPaid&quot;: 100,&#xd;
+          &quot;receiptNumber&quot;: &quot;01/2020-21/005633&quot;,&#xd;
+          &quot;manualReceiptNumber&quot;: null,&#xd;
+          &quot;manualReceiptDate&quot;: 0,&#xd;
+          &quot;receiptDate&quot;: 1611058754822,&#xd;
+          &quot;receiptType&quot;: &quot;BILLBASED&quot;,&#xd;
+          &quot;businessService&quot;: &quot;WS&quot;,&#xd;
+          &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+          &quot;bill&quot;: {&#xd;
+            &quot;id&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+            &quot;mobileNumber&quot;: null,&#xd;
+            &quot;paidBy&quot;: null,&#xd;
+            &quot;payerName&quot;: null,&#xd;
+            &quot;payerAddress&quot;: null,&#xd;
+            &quot;payerEmail&quot;: null,&#xd;
+            &quot;payerId&quot;: null,&#xd;
+            &quot;status&quot;: &quot;ACTIVE&quot;,&#xd;
+            &quot;reasonForCancellation&quot;: null,&#xd;
+            &quot;isCancelled&quot;: null,&#xd;
+            &quot;additionalDetails&quot;: null,&#xd;
+            &quot;billDetails&quot;: [&#xd;
+              {&#xd;
+                &quot;billDescription&quot;: null,&#xd;
+                &quot;displayMessage&quot;: null,&#xd;
+                &quot;callBackForApportioning&quot;: null,&#xd;
+                &quot;cancellationRemarks&quot;: null,&#xd;
+                &quot;id&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                &quot;demandId&quot;: &quot;cf18adb9-249d-4f82-a002-91f3d82d2a9e&quot;,&#xd;
+                &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+                &quot;amount&quot;: 295692,&#xd;
+                &quot;amountPaid&quot;: 0,&#xd;
+                &quot;fromPeriod&quot;: 1593887399000,&#xd;
+                &quot;toPeriod&quot;: 1596085238078,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;channel&quot;: null,&#xd;
+                &quot;voucherHeader&quot;: null,&#xd;
+                &quot;boundary&quot;: null,&#xd;
+                &quot;manualReceiptNumber&quot;: null,&#xd;
+                &quot;manualReceiptDate&quot;: null,&#xd;
+                &quot;billAccountDetails&quot;: [&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;c2d7c704-1da7-49c2-8cd1-4c95fb45dd76&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;7777a0eb-fd8f-413a-8824-0ff36cc70f0e&quot;,&#xd;
+                    &quot;order&quot;: 0,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_ADVANCE_CARRYFORWARD&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;7cd65738-0d2c-4cd4-8351-ee3974c3635e&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;35b24658-7bdc-41bb-a82e-ac662fc93a24&quot;,&#xd;
+                    &quot;order&quot;: 0,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_CHARGE&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;e7218359-96c4-405d-8a8d-006b60ed2b01&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;3833c6bc-0995-4f82-97d4-c03a60e08b68&quot;,&#xd;
+                    &quot;order&quot;: 3,&#xd;
+                    &quot;amount&quot;: 197127.76,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_PENALTY&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;49995e5f-f507-4487-b830-1e4a4f2d6845&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;4221896c-40f7-4bfa-8400-bd1616e1705f&quot;,&#xd;
+                    &quot;order&quot;: 4,&#xd;
+                    &quot;amount&quot;: 0.36,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_Round_Off&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;9344037a-3ec2-4694-8362-9a5150de38e5&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;cb9d892f-0e32-4139-a1c0-196034a85359&quot;,&#xd;
+                    &quot;order&quot;: 1,&#xd;
+                    &quot;amount&quot;: 98563.88,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_INTEREST&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;17face53-45ef-4812-a7a4-edf8785e40ee&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;0d86ab57-9ec9-47c7-b350-85af81f9187f&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;ba2402f3-47cf-4100-8fc3-0259462102ec&quot;,&#xd;
+                    &quot;order&quot;: 2,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_WATER_CESS&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  }&#xd;
+                ],&#xd;
+                &quot;collectionType&quot;: null,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;expiryDate&quot;: 1611100799593&#xd;
+              },&#xd;
+              {&#xd;
+                &quot;billDescription&quot;: null,&#xd;
+                &quot;displayMessage&quot;: null,&#xd;
+                &quot;callBackForApportioning&quot;: null,&#xd;
+                &quot;cancellationRemarks&quot;: null,&#xd;
+                &quot;id&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                &quot;demandId&quot;: &quot;94af114a-ee5d-4740-9e02-caeb998ead1f&quot;,&#xd;
+                &quot;billId&quot;: &quot;c239390c-566b-41af-8d2c-a314b3ed4459&quot;,&#xd;
+                &quot;amount&quot;: 278341,&#xd;
+                &quot;amountPaid&quot;: 100,&#xd;
+                &quot;fromPeriod&quot;: 1590796800000,&#xd;
+                &quot;toPeriod&quot;: 1591747200000,&#xd;
+                &quot;additionalDetails&quot;: null,&#xd;
+                &quot;channel&quot;: null,&#xd;
+                &quot;voucherHeader&quot;: null,&#xd;
+                &quot;boundary&quot;: null,&#xd;
+                &quot;manualReceiptNumber&quot;: null,&#xd;
+                &quot;manualReceiptDate&quot;: null,&#xd;
+                &quot;billAccountDetails&quot;: [&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;7eb5cdd6-62fb-4cac-9f08-624926aa59ec&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;34d9fa56-6056-4433-9b9f-d1c8868682c4&quot;,&#xd;
+                    &quot;order&quot;: 0,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_CHARGE&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;3d4e0a78-95c6-476c-87b0-be19d1107104&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;019f9119-99cb-47ce-9411-ab799fd9c398&quot;,&#xd;
+                    &quot;order&quot;: 3,&#xd;
+                    &quot;amount&quot;: 185761.02,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_PENALTY&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;c9e9edde-6a5e-4c8a-b4ec-2f7ac6beb722&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;0d9ac9bd-a931-49e1-86d0-26655641f0e8&quot;,&#xd;
+                    &quot;order&quot;: 4,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_Round_Off&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;a2d36565-0092-40ef-8c10-5fcfd0153a21&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;e160624d-7b67-4caa-b811-c935a0cd00dd&quot;,&#xd;
+                    &quot;order&quot;: 1,&#xd;
+                    &quot;amount&quot;: 92579.98,&#xd;
+                    &quot;adjustedAmount&quot;: 100,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_TIME_INTEREST&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  },&#xd;
+                  {&#xd;
+                    &quot;id&quot;: &quot;388d3b68-673e-4e07-8735-618020cd460c&quot;,&#xd;
+                    &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+                    &quot;billDetailId&quot;: &quot;45c0735c-f8bf-4475-8e43-dc99153bc282&quot;,&#xd;
+                    &quot;demandDetailId&quot;: &quot;8b00a7f3-f94a-4f50-b42b-ad025b9b8ebb&quot;,&#xd;
+                    &quot;order&quot;: 2,&#xd;
+                    &quot;amount&quot;: 0,&#xd;
+                    &quot;adjustedAmount&quot;: 0,&#xd;
+                    &quot;isActualDemand&quot;: null,&#xd;
+                    &quot;taxHeadCode&quot;: &quot;WS_WATER_CESS&quot;,&#xd;
+                    &quot;additionalDetails&quot;: null,&#xd;
+                    &quot;purpose&quot;: null,&#xd;
+                    &quot;auditDetails&quot;: null&#xd;
+                  }&#xd;
+                ],&#xd;
+                &quot;collectionType&quot;: null,&#xd;
+                &quot;auditDetails&quot;: null,&#xd;
+                &quot;expiryDate&quot;: 1611100799592&#xd;
+              }&#xd;
+            ],&#xd;
+            &quot;tenantId&quot;: &quot;pb.amritsar&quot;,&#xd;
+            &quot;auditDetails&quot;: {&#xd;
+              &quot;createdBy&quot;: &quot;1bc2f02b-eb30-4777-a8b1-6e831e867c4f&quot;,&#xd;
+              &quot;createdTime&quot;: 1611058697593,&#xd;
+              &quot;lastModifiedBy&quot;: &quot;1bc2f02b-eb30-4777-a8b1-6e831e867c4f&quot;,&#xd;
+              &quot;lastModifiedTime&quot;: 1611058697593&#xd;
+            },&#xd;
+            &quot;collectionModesNotAllowed&quot;: [&#xd;
+              &quot;DD&quot;&#xd;
+            ],&#xd;
+            &quot;partPaymentAllowed&quot;: true,&#xd;
+            &quot;isAdvanceAllowed&quot;: true,&#xd;
+            &quot;minimumAmountToBePaid&quot;: null,&#xd;
+            &quot;businessService&quot;: &quot;WS&quot;,&#xd;
+            &quot;totalAmount&quot;: 574033,&#xd;
+            &quot;consumerCode&quot;: &quot;WS/107/2020-21/000080&quot;,&#xd;
+            &quot;billNumber&quot;: &quot;BILL-013011&quot;,&#xd;
+            &quot;billDate&quot;: 1611058697593,&#xd;
+            &quot;amountPaid&quot;: null&#xd;
+          },&#xd;
+          &quot;additionalDetails&quot;: null,&#xd;
+          &quot;auditDetails&quot;: {&#xd;
+            &quot;createdBy&quot;: &quot;29752&quot;,&#xd;
+            &quot;createdTime&quot;: 1611058754822,&#xd;
+            &quot;lastModifiedBy&quot;: &quot;29752&quot;,&#xd;
+            &quot;lastModifiedTime&quot;: 1611058754822&#xd;
+          }&#xd;
+        }&#xd;
+      ],&#xd;
+      &quot;paidBy&quot;: &quot;Aniket&quot;,&#xd;
+      &quot;mobileNumber&quot;: &quot;9999999999&quot;,&#xd;
+      &quot;payerName&quot;: null,&#xd;
+      &quot;payerAddress&quot;: null,&#xd;
+      &quot;payerEmail&quot;: null,&#xd;
+      &quot;payerId&quot;: &quot;1bc2f02b-eb30-4777-a8b1-6e831e867c4f&quot;,&#xd;
+      &quot;paymentStatus&quot;: &quot;DEPOSITED&quot;,&#xd;
+      &quot;fileStoreId&quot;: null&#xd;
+    }&#xd;
+  ]&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8189</stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/pdf-service/v1/_createnosave?key=consolidatedreceipt&amp;tenantId=pb</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="authority" elementType="Header">
+                <stringProp name="Header.name">authority</stringProp>
+                <stringProp name="Header.value">egov-micro-qa.egovernments.org</stringProp>
+              </elementProp>
+              <elementProp name="accept" elementType="Header">
+                <stringProp name="Header.name">accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="user-agent" elementType="Header">
+                <stringProp name="Header.name">user-agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="content-type" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="origin" elementType="Header">
+                <stringProp name="Header.name">origin</stringProp>
+                <stringProp name="Header.value">https://egov-micro-qa.egovernments.org</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-site" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-site</stringProp>
+                <stringProp name="Header.value">same-origin</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-mode" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-mode</stringProp>
+                <stringProp name="Header.value">cors</stringProp>
+              </elementProp>
+              <elementProp name="sec-fetch-dest" elementType="Header">
+                <stringProp name="Header.name">sec-fetch-dest</stringProp>
+                <stringProp name="Header.value">empty</stringProp>
+              </elementProp>
+              <elementProp name="referer" elementType="Header">
+                <stringProp name="Header.name">referer</stringProp>
+                <stringProp name="Header.value">https://egov-micro-qa.egovernments.org/employee/egov-common/acknowledgement?status=success&amp;consumerCode=PB-TL-2020-05-22-006595&amp;tenantId=pb.amritsar&amp;receiptNumber=TEST/107/2020-21/063755&amp;businessService=TL</stringProp>
+              </elementProp>
+              <elementProp name="accept-language" elementType="Header">
+                <stringProp name="Header.name">accept-language</stringProp>
+                <stringProp name="Header.value">en-GB,en-US;q=0.9,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
